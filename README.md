@@ -11,3 +11,7 @@
 ## License
 
 GNU GPL v3
+
+## Doc
+
+For Technical Documentation, see: https://github.com/AltermythLeo/trafiz-backend/blob/master/Trafiz%20Technical%20Document%20v1.2%2022.pdf
