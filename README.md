@@ -6,7 +6,7 @@
 * Git clone this repository
 * Rename .env.example to .env and setup as needed
 * Create database "trafiz"
-* Import table schema using file on /db/trafiz_structure.sql
+* Import table schema and stored procedure using file on /db/trafiz-schema-storedproc.xml
 
 ## License
 
