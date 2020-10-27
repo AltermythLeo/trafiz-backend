@@ -172,4 +172,56 @@ class investcatchtable {
 		return $data;
 	}
 
+	public function getReportTransaction($idmsuser, $date1, $date2, $catfilter, $city)
+	{
+		$idmsuser = Helper::dbescapeNotNull($idmsuser);
+		$sql = "";
+		if($city != -1) {
+			$sql = "CALL investreportbetweendatev2(".$idmsuser.",'".$date1."','".$date2."','".$catfilter."','%".$city."%')";
+		} else {
+			$sql = "CALL investreportbetweendatev2(".$idmsuser.",'".$date1."','".$date2."','".$catfilter."','".$city."')";
+		}
+		$data = DB::select($sql);
+		return $data;
+	}
+
+	public function getReportTransactionTotal($idmsuser, $date1, $date2, $catfilter, $city)
+	{
+		$idmsuser = Helper::dbescapeNotNull($idmsuser);
+		$sql = "";
+		if($city != -1) {
+			$sql = "CALL investreporttotalv2(".$idmsuser.",'".$date1."','".$date2."','".$catfilter."','%".$city."%')";
+		} else {
+			$sql = "CALL investreporttotalv2(".$idmsuser.",'".$date1."','".$date2."','".$catfilter."','".$city."')";
+		}
+		
+		$data = DB::select($sql);
+		return $data;
+	}
+
+	function getsupplier()
+	{
+		$data = DB::select("CALL investgetsupplier()");
+		return $data;
+	}
+
+	function getCategory($idmsuser)
+	{
+		$data = DB::select("CALL investreportcategory('".$idmsuser."')");
+		return $data;
+	}
+
+	public function getReportCSVDumpData($idmsuser, $date1, $date2, $catfilter, $city)
+	{
+		$idmsuser = Helper::dbescapeNotNull($idmsuser);
+		$sql = "";
+		if($city != -1) {
+			$sql = "CALL investreportdumpdatav2(".$idmsuser.",'".$date1."','".$date2."','".$catfilter."','%".$city."%')";
+		} else {
+			$sql = "CALL investreportdumpdatav2(".$idmsuser.",'".$date1."','".$date2."','".$catfilter."','".$city."')";
+		}
+		$data = DB::select($sql);
+		return $data;
+	}
+
 }

@@ -261,7 +261,7 @@
 											<i class="fa fa-search"></i> <span>Generate Delivery Sheet</span>
 										</a>
 									</li>
-                  @if($title == "fishkdedata")
+                  					@if($title == "fishkdedata")
 									<li class="active">
 									@else
 									<li>
@@ -343,6 +343,28 @@
 							</li>
 						@endif
 						
+						@if($authlv <= 1)
+							<li class="treeview">
+								<a href="#">
+									<i class="fa fa-clipboard"></i> <span>INVEST Report</span>
+									<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+
+									@if($title == "fishcatchreport")
+									<li class="active">
+									@else
+									<li>
+									@endif
+										<a href="{{URL::to('/investreport/dailytransaction')}}">
+											<i class="fa fa-pied-piper-alt"></i> <span>Daily Transaction</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						@endif
 					</ul>
 				</section>
 			</aside>

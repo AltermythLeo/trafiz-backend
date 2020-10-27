@@ -84,6 +84,9 @@ Route::post('/info/post', 'InfoController@post');
 
 Route::get('/report/log', 'SyncController@index');
 
+Route::get('/investreport/dailytransaction', 'InvestReportController@index');
+Route::get('/investreport/csv', 'InvestReportController@reportCsv');
+
 /* api */
 Route::get('/testapi', 'ApiController@index');
 Route::post('/_api/sup/login', 'ApiController@loginsupplier');

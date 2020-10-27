@@ -1826,7 +1826,7 @@ class ApiController extends BaseController
 			$loanexpenseparam = $request->loanexpenseparam;
 			$otherexpenseparam = $request->otherexpenseparam;
 			$postdateparam = $request->postdateparam;
-			$closeparam = $request->closeparam;
+			$closeparam = isset($request->closeparam) ? $request->closeparam : "0" ; // check
 			$notes = $request->noteparam;
 
 			$table = new buyfishtable();
@@ -3760,10 +3760,10 @@ class ApiController extends BaseController
 			$loanexpenseparam = $request->loanexpenseparam;
 			$otherexpenseparam = $request->otherexpenseparam;
 			$postdateparam = $request->postdateparam;
-      $closeparam = $request->closeparam;
-      $fishermannameparam = isset($request->fishermannameparam) ? $request->fishermannameparam : "";
-      $fishermanidparam = isset($request->fishermanidparam) ? $request->fishermanidparam : "";
-      $fishermanregnumberparam = isset($request->fishermanregnumberparam) ? $request->fishermanregnumberparam : "";
+			$closeparam = isset($request->closeparam) ? $request->closeparam : "0" ;
+			$fishermannameparam = isset($request->fishermannameparam) ? $request->fishermannameparam : "";
+			$fishermanidparam = isset($request->fishermanidparam) ? $request->fishermanidparam : "";
+			$fishermanregnumberparam = isset($request->fishermanregnumberparam) ? $request->fishermanregnumberparam : "";
 
 			$table = new buyfishtable();
 			$returnValue = $table->updatecatchv5($idtrcatchofflineparam, $idmssupplierparam, $idfishermanoffline, $idbuyeroffline, $idshipoffline, $idfishoffline, $purchasedateparam, $purchasetimeparam, $catchorfarmedparam, $bycatchparam, $fadusedparam, $purchaseuniquenoparam, $productformatlandingparam, $unitmeasurementparam, $quantityparam, $weightparam, $fishinggroundareaparam, $purchaselocationparam, $uniquetripidparam, $datetimevesseldepartureparam, $datetimevesselreturnparam, $portnameparam, $priceperkgparam, $totalpriceparam, $loanexpenseparam, $otherexpenseparam, $postdateparam, $closeparam, $sender, $fishermannameparam, $fishermanidparam, $fishermanregnumberparam);
